@@ -1,44 +1,41 @@
 # Basel-III-Credit-Risk
 
-This project focuses on building a credit risk scorecard to estimate the Probability of Default (PD) using customer data. It follows a complete end-to-end modeling pipeline from preprocessing to validation and monitoring.
+Dự án này xây dựng mô hình chấm điểm tín dụng nhằm ước lượng Xác suất vỡ nợ (Probability of Default - PD) cho từng khách hàng, sử dụng dữ liệu đầu vào và các phương pháp phân tích thống kê. Quy trình bao gồm từ tiền xử lý dữ liệu đến xây dựng mô hình, đánh giá và giám sát sau triển khai.
 
- 1. Data Preprocessing
-Cleaned the raw dataset and handled missing values using appropriate imputation methods.
+1. Tiền xử lý dữ liệu
 
-Applied normalization to scale continuous features for model stability.
+- Làm sạch dữ liệu và xử lý giá trị thiếu (missing values).
 
+- Thực hiện chuẩn hóa (normalization) cho các biến liên tục để đảm bảo mô hình ổn định.
 
-2. Exploratory Data Analysis & Feature Engineering
-Classified variables into categorical and numerical types.
+2. Phân tích dữ liệu và biến đầu vào
+- Phân loại các biến thành biến phân loại và biến liên tục.
 
-Performed Fine Classing and calculated Weight of Evidence (WoE) and Information Value (IV) to evaluate variable predictive power.
+- Áp dụng kỹ thuật Fine Classing, tính Weight of Evidence (WoE) và Information Value (IV) để đánh giá sức mạnh dự báo của từng biến.
 
-3. Model Development
+3. Xây dựng mô hình
+- Sử dụng Logistic Regression để ước lượng Probability of Default (PD) cho từng khách hàng.
 
-Built a Logistic Regression model to estimate the Probability of Default (PD) for each customer.
+- Lựa chọn biến đầu vào dựa trên giá trị IV, kiểm tra đa cộng tuyến (multicollinearity) và ý nghĩa kinh doanh.
 
-Selected variables based on IV, business logic, and multicollinearity checks.
+4. Tạo bảng điểm tín dụng (Scorecard)
+- Chuyển đổi đầu ra của mô hình thành thang điểm tín dụng (scorecard) bằng kỹ thuật binning và scale điểm.
 
+- Scorecard ra quyết định tín dụng và định giá rủi ro theo hồ sơ khách hàng.
 
-4. Scorecard Development
-Transformed the logistic regression output into a credit scorecard using binning and score scaling techniques.
+5. Đánh giá mô hình
 
-Designed scorecard to assist in credit decisioning and risk-based pricing.
+Đánh giá độ chính xác và phân biệt mô hình thông qua:
 
-5. Model Validation
-Evaluated model performance using:
-
-- ROC Curve / AUC
+- Đường cong ROC và AUC
 
 - KS Statistic
 
-- Gini Coefficient
+- Gini Index
 
-- Assessed overfitting and model stability across training and validation sets.
+- Kiểm tra hiện tượng overfitting và tính ổn định mô hình trên tập huấn luyện và kiểm định.
 
-6. Population Monitoring
-Monitored Population Stability Index (PSI) to track changes in data distribution over time.
+6. Giám sát mô hình sau triển khai
+- Theo dõi Population Stability Index (PSI) để phát hiện sự thay đổi trong phân bố dữ liệu khách hàng theo thời gian.
 
-Flagged significant shifts in customer behavior for early warning and model recalibration.
-
-
+- Cảnh báo sớm khi có dấu hiệu thay đổi hành vi khách hàng để chuẩn bị cho việc điều chỉnh mô hình.
