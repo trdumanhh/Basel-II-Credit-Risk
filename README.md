@@ -2,7 +2,7 @@
 
 Dự án này xây dựng mô hình chấm điểm tín dụng nhằm ước lượng Xác suất vỡ nợ (Probability of Default - PD) cho từng khách hàng, sử dụng dữ liệu đầu vào và các phương pháp phân tích thống kê. Quy trình bao gồm từ tiền xử lý dữ liệu đến xây dựng mô hình, đánh giá và giám sát sau triển khai.
 
-1. Tiền xử lý dữ liệu
+1. Tiền xử lý dữ liệu (Run script Data Preparation)
 
 - Làm sạch dữ liệu và xử lý giá trị thiếu (missing values).
 
